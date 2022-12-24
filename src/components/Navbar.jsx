@@ -7,8 +7,8 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <div className="w-full flex py-4 justify-between items-center bg-primary px-2 ">
-      <div className="flex items-center">
+    <div className="w-full flex py-2 justify-between items-center bg-primary px-4 md:pt-4 ">
+      <div className="flex items-center"> 
         <img src={logo} alt="hoobank" className="w-[30px] h-[30px] mr-3" />
         <h1 className="text-white font-poppins font-semibold">Zoominfo</h1>
       </div>
@@ -17,7 +17,7 @@ const Navbar = () => {
         {navLinks.map((nav, index) => (
           <li
             key={nav.id}
-            className={`font-poppins font-normal cursor-pointer text-sm ${
+            className={`font-poppins font-normal cursor-pointer text-base ${
               active === nav.title ? "text-white" : "text-dimWhite"
             } ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
             onClick={() => setActive(nav.title)}
@@ -36,15 +36,15 @@ const Navbar = () => {
 
         <div
           className={`${
-            !toggle ? "hidden" : "flex"
-          } p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}
+            !toggle ? "hidden" : "flex-"
+          } p-6 bg-black z-[5] absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}
         >
           <ul className="list-none flex justify-end items-start flex-1 flex-col">
             {navLinks.map((nav, index) => (
               <li
                 key={nav.id}
                 className={`font-poppins font-medium cursor-pointer text-[16px]  ${
-                  active === nav.title ? "text-white" : "text-dimWhite"
+                  active === nav.title ? "text-white" : "text-ora"
                 } ${
                   index === navLinks.length - 1 ? "mb-0" : "mb-4"
                 } hover:text-secondary`}
@@ -59,9 +59,9 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className=" text-white flex items-center">
+      <div className=" text-white hidden md:flex items-center font-semibold ">
         Login
-        <button className="ml-4 bg-ora py-2 px-6 rounded-full">Free trial</button>
+        <button className="ml-4 bg-ora py-2 px-6 rounded-full font-semibold">Free trial</button>
       </div>
     </div>
   );
