@@ -1,6 +1,3 @@
-import React from "react";
-import styles, { layout } from "../style";
-import { logo } from "../assets";
 import ZoomInIcon from "@mui/icons-material/ZoomIn";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import WebhookSharpIcon from "@mui/icons-material/WebhookSharp";
@@ -9,9 +6,9 @@ import SplitscreenSharpIcon from "@mui/icons-material/SplitscreenSharp";
 
 const Integrations = () => {
   return (
-    <section className="w-full h-full bg-[#f4f5f7] py-6">
-      <div className="w-[80%] mx-auto bg-[#f5f6f8] h-screen ">
-        <div className="text-center py-6 px-2 mb-4 md:mb-10">
+    <section className="w-full max-h-fit md:h-screen bg-[#f5f6f8] py-6">
+      <div className="w-[80%] mx-auto bg-[#f5f6f8] h-fit ">
+        <div className="text-center py-6 h-fit mb-4 md:mb-10">
           <p className="font-bold">
             REV<span className="text-ora mt-2">OS</span>
           </p>
@@ -22,12 +19,12 @@ const Integrations = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gutter-4 gap-y-5 md:gap-y-7 md:gap-x-7  md:px-36">
+        <div className="grid md:grid-cols-2 gap-y-1 md:gap-y-7 md:gap-x-7  md:px-8">
           <div className="shadow-md bg-white h-40 w-31 p-4">
             <div className="flex items-center">
               <ZoomInIcon fontSize="large" color="primary" />
               <p className="font-bold text-2xl text-primary">
-                Sales<span className="text-ora">OS</span>
+                Sales<span className="text-ora font-normal ">OS</span>
               </p>
             </div>
 
@@ -44,7 +41,7 @@ const Integrations = () => {
             <div className="flex items-center">
               <StorefrontSharpIcon fontSize="large" color="action" />
               <p className="font-bold text-2xl text-primary">
-                Sales<span className="text-ora">OS</span>
+                Marketing<span className=" text-cyan-400 font-normal ">OS</span>
               </p>
             </div>
 
@@ -53,7 +50,7 @@ const Integrations = () => {
               determined to crush quotes
             </p>
             <span className="text-ora text-sm font-semibold p-2">
-             Accelerate your ROI <ArrowRightAltIcon />{" "}
+              Accelerate your ROI <ArrowRightAltIcon />{" "}
             </span>
           </div>
 
@@ -61,7 +58,7 @@ const Integrations = () => {
             <div className="flex items-center">
               <SplitscreenSharpIcon fontSize="large" color="success" />
               <p className="font-bold text-2xl text-primary">
-                Sales<span className="text-ora">OS</span>
+                Talent<span className="text-orange-500 font-normal ">OS</span>
               </p>
             </div>
 
@@ -78,7 +75,8 @@ const Integrations = () => {
             <div className="flex items-center">
               <WebhookSharpIcon fontSize="large" color="secondary" />
               <p className="font-bold text-2xl text-primary">
-                Sales<span className="text-ora">OS</span>
+                Operations
+                <span className="text-green-300 font-normal ">OS</span>
               </p>
             </div>
 

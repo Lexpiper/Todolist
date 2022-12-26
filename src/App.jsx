@@ -4,7 +4,7 @@ import { close, logo, menu } from "./assets";
 import styles from "./style";
 import {
   About,
-  Business,
+  Resources,
   Button,
   Careers,
   Footer,
@@ -32,6 +32,7 @@ function App() {
       <div className={`bg-primary ${styles.flexStart}`}>
         <div className={`${styles.boxWidth} `}>
           <Integrations />
+          <Resources/>
         </div>
       </div>
     </div>

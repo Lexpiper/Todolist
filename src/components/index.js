@@ -1,5 +1,5 @@
 import About from "./About"
-import Business from "./Business"
+import Resources from "./Resources"
 import Button from "./Button"
 import Careers from "./Careers"
 import Footer from "./Footer"
@@ -10,7 +10,7 @@ import Pricing from "./Pricing"
 
 export {
     About,
-    Business,
+    Resources,
     Button,
     Careers,
     Footer,
