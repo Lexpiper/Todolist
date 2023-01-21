@@ -5,24 +5,37 @@ import { useState } from "react";
 import Note from "./components/Note";
 
 function App() {
-  const [notes, setNotea] = useState([]);
+  const [notes, setNotes] = useState([]);
 
   const addNote = (newNote) => {
-    setNotea((prevNote) => {
+    setNotes((prevNote) => {
       return [...prevNote, newNote];
     });
-    console.log(newNote);
+  };
+
+  const deleteNote = (id) => {
+    setNotes((prevNote) => {
+      return prevNote.filter((noteItem, index) => {
+          return index !== id
+      });
+    });
   };
 
   return (
     <div className="App bg-[#eee] h-full">
       <Header />
       <Input onAdd={addNote} />
-      <div className="grid grid-cols-4 mt-10 gap-5 h-full">
-        {notes.map((noteItem) => {
+      <div className="grid grid-cols-1 md:grid-cols-4 place-items-center mt-10 gap-5 h-full">
+        {notes.map((noteItem, index) => {
           return (
             <div className="">
-              <Note title={noteItem.title} content={noteItem.content} />
+              <Note
+                key={index}
+                id={index}
+                title={noteItem.title}
+                content={noteItem.content}
+                onDelete={deleteNote}
+              />
             </div>
           );
         })}
