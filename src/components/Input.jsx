@@ -2,25 +2,35 @@ import React from "react";
 import { useState } from "react";
 import { BiPlusMedical } from "react-icons/bi";
 
-const Input = () => {
-    const [uploads, setUploads] = useState([])
-  const [content, setContent] = useState({
+const Input = ({onAdd}) => {
+  const [note, setNote] = useState({
     title: "",
-    list: "",
+    content: "",
   });
 
-  const addItem= (event) => {
-    const newValue = event.target.value;
-  }
+ 
+  const addItem = (event) => {
+    const { name, value } = event.target;
 
-  const handleAdd = () => {
+    setNote((prevNote) => {
+      return {
+        ...prevNote, 
+        [name]: value,
+      };
+    });
+  };
 
+  const submitNote = (event) => {
+    onAdd(note);
+    event.preventDefault();
   };
   return (
-    <div className="flex w-full h-full bg-[#eee] pt-5">
-      <div className=" w-96 mx-auto bg-white h-36 flex flex-col p-4 rounded-lg shadwo-sm relative">
+    <div className="flex w-full h-full bg-[#eee] pt-5 ">
+      <div className=" w-[400px] mx-auto bg-white h-44 flex flex-col p-4 rounded-lg shadwo-sm relative">
         <input
           onChange={addItem}
+          name="title"
+          value={note.title}
           type="text"
           className="h-[42px] mb-5 outline-none border-[1px] border-b-black"
           placeholder="Title"
@@ -28,12 +38,17 @@ const Input = () => {
         <input
           onChange={addItem}
           type="text"
+          name="content"
+          value={note.list}
           className="h-[42px] outline-none border-[1px] border-b-black"
-          placeholder="Take a jote.."
+          placeholder="Take a note.."
         />
-        <div className="bg-yellow-300 w-10 h-10 rounded-full absolute bottom-[-20px] right-3 text-2xl flex items-center justify-center cursor-pointer">
-          <BiPlusMedical onClick={handleAdd} />
-        </div>
+        <button
+          onClick={submitNote}
+          className="bg-yellow-300 w-10 h-10 rounded-full absolute bottom-[-20px] right-3 text-2xl flex items-center justify-center cursor-pointer"
+        >
+          <BiPlusMedical />
+        </button>
       </div>
     </div>
   );
