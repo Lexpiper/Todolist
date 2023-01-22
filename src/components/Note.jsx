@@ -14,10 +14,10 @@ const Note = ({ title, content, onDelete, id }) => {
         >
           {title}
         </p>
-        <p className="fle items-center p-2 text-sm">{content}</p>
+        <p className=" items-center p-2 text-sm">{content}</p>
         <button
           onClick={handleDel}
-          className={`  absolute bottom-0 right-0 text-sm text-[#fbcf5f] text-semibold p-2 cursor-pointer `}
+          className={` absolute bottom-0 right-0 text-sm text-[#fbcf5f] text-semibold p-2 cursor-pointer `}
         >
           <AiFillDelete />
         </button>

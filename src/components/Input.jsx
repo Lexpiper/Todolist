@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { BiPlusMedical } from "react-icons/bi";
 
+
 const Input = ({ onAdd }) => {
   const [note, setNote] = useState({
     title: "",
@@ -12,13 +13,14 @@ const Input = ({ onAdd }) => {
 
   const addItem = (event) => {
     const { name, value } = event.target;
-
+    
     setNote((prevNote) => {
-      return {
-        ...prevNote,
-        [name]: value,
-      };
+        return {
+            ...prevNote,
+            [name]: value,
+        };
     });
+   
   };
 
   const submitNote = (event) => {
@@ -30,8 +32,8 @@ const Input = ({ onAdd }) => {
     event.preventDefault();
   };
   return (
-    <div className="flex w-full h-full bg-[#eee] pt-5 ">
-      <div className=" w-[400px] mx-auto bg-white h-44 flex flex-col p-4 rounded-lg shadow-lg relative">
+    <div className="flex w-full h-full bg-transparent pt-5 ">
+      <div className=" w-[400px] mx-auto bg-white h-fit flex flex-col p-4 rounded-lg shadow-lg relative">
         {write && (
           <input
             onChange={addItem}
@@ -51,16 +53,17 @@ const Input = ({ onAdd }) => {
           type="text"
           name="content"
           value={note.content}
-          className="h-5 flex outline-none resize-none snap-none border-b-black scrol"
+          className="h-42 flex outline-none resize-none "
           placeholder="Take a note.."
-          
-        />
-        <button
-          onClick={submitNote}
-          className="bg-yellow-300 w-10 h-10 rounded-full  hover:bg-slate-400 transition-all duration-200 ease-in-out absolute bottom-[-20px] right-3 text-2xl flex items-center justify-center cursor-pointer"
-        >
-          <BiPlusMedical />
-        </button>
+        ></textarea>
+        {write && (
+          <button
+            onClick={submitNote}
+            className="bg-yellow-300 w-7 h-7 rounded-full  hover:bg-slate-400 transition-all duration-200 ease-in-out absolute bottom-[-20px] right-3 text-sm flex items-center justify-center cursor-pointer"
+          >
+            <BiPlusMedical />
+          </button>
+        )}
       </div>
     </div>
   );

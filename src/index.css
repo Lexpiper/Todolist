@@ -5,6 +5,8 @@
 @tailwind utilities;
 
 :root {
+  background-color: #eee;
+  background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
   --black-gradient: linear-gradient(
     144.39deg,
     #ffffff -278.56%,
