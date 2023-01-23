@@ -34,15 +34,15 @@ function App() {
     }
     return setsaved(!saved);
   };
-
   const deleteNote = (id) => {
     setNotes((prevNote) => {
-      return prevNote.filter((noteItem, index) => {
+      let updatedNotes = prevNote.filter((noteItem, index) => {
         return index !== id;
       });
+      localStorage.setItem("noteList", JSON.stringify(updatedNotes));
+      return updatedNotes;
     });
   };
-
   return (
     <div className="App bg-transparent h-full font-poppins">
       <Header />
