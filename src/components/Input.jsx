@@ -32,8 +32,8 @@ const Input = ({ onAdd }) => {
     event.preventDefault();
   };
   return (
-    <div className="flex w-full h-full bg-transparent pt-5 ">
-      <div className=" w-[400px] mx-auto bg-white h-fit flex flex-col p-4 rounded-lg shadow-lg relative">
+    <div className="flex w-full h-full bg-transparent p-5 ">
+      <div className=" w-[400px] mx-auto bg-white h-fit flex flex-col p-4 rounded-lg shadow-md dark:shadow-dimWhite relative">
         {write && (
           <input
             onChange={addItem}

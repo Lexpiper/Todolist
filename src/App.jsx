@@ -44,7 +44,7 @@ function App() {
     });
   };
   return (
-    <div className="App bg-transparent h-full font-poppins">
+    <div className="App dark:bg-black bg-transparent h-full min-h-screen font-poppins pb-20 overflow-x-hidden">
       <Header />
       <Input onAdd={addNote} />
       <div className="grid grid-cols-1 md:grid-cols-4 place-items-center mt-10 gap-5 h-full">
