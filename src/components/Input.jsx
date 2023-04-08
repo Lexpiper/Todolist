@@ -40,7 +40,7 @@ const Input = ({ onAdd }) => {
             name="title"
             value={note.title}
             type="text"
-            className="h-[42px] mb-5 outline-none border-[1px] border-b-black"
+            className="h-[42px] mb-5 outline-none border-[1px] border-b-black p-2"
             placeholder="Title"
           />
         )}
@@ -53,7 +53,7 @@ const Input = ({ onAdd }) => {
           type="text"
           name="content"
           value={note.content}
-          className="h-42 flex outline-none resize-none "
+          className="h-42 flex outline-none resize-none p-2"
           placeholder="Take a note.."
         ></textarea>
         {write && (
